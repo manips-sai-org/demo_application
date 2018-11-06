@@ -1,6 +1,8 @@
 cmake_minimum_required (VERSION 2.8.12)
 project (demo_application)
 SET(CMAKE_CXX_FLAGS "-std=c++11")
+SET(CMAKE_BUILD_TYPE "Debug")
+# SET(CMAKE_BUILD_TYPE "Release")
 
 # - eigen3
 set(EIGEN3_INCLUDE_DIR $ENV{EIGEN3_INCLUDE_DIR})
@@ -50,6 +52,11 @@ find_package(SAI2-URDF REQUIRED)
 include_directories(${SAI2-URDF_INCLUDE_DIRS})
 add_definitions(${SAI2-URDF_DEFINITIONS})
 
+# - SAI2-URDF
+find_package(SAI2-PRIMITIVES REQUIRED)
+include_directories(${SAI2-PRIMITIVES_INCLUDE_DIRS})
+add_definitions(${SAI2-PRIMITIVES_DEFINITIONS})
+
 # - glfw3
 find_package(glfw3 QUIET)
 find_library(GLFW_LIBRARY glfw)
@@ -87,3 +94,4 @@ set(DEMO_APPLICATION_COMMON_LIBRARIES
 set (DEMO_APPLICATION_BINARY_DIR                  ${PROJECT_SOURCE_DIR}/bin)
 
 add_subdirectory(00-kuka_joint_hold_pos)
+add_subdirectory(01-panda_force_control)
