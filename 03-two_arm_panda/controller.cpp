@@ -157,8 +157,8 @@ int main() {
 		posori_tasks[i]->_kv_ori = 40.0;		
 
 		posori_tasks[i]->_use_velocity_saturation_flag = true;
-		posori_tasks[i]->_linear_saturation_velocity = 0.1;
-		posori_tasks[i]->_angular_saturation_velocity = 30.0/180.0;
+		posori_tasks[i]->_linear_saturation_velocity = 0.3;
+		posori_tasks[i]->_angular_saturation_velocity = 90.0/180.0;
 
 	}
 
