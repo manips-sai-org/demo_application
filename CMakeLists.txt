@@ -75,7 +75,6 @@ elseif (CMAKE_SYSTEM_NAME MATCHES Linux)
 	set(JSONCPP_LIBRARY ${JSONCPP_LIBRARIES})
 endif ()
 
-
 # set common dependencies
 set(DEMO_APPLICATION_COMMON_LIBRARIES
 	${CHAI3D_LIBARIES}
@@ -93,5 +92,6 @@ set(DEMO_APPLICATION_COMMON_LIBRARIES
 # add apps
 set (DEMO_APPLICATION_BINARY_DIR                  ${PROJECT_SOURCE_DIR}/bin)
 
-add_subdirectory(00-kuka_joint_hold_pos)
-add_subdirectory(01-panda_force_control)
+add_subdirectory(01-kuka_joint_hold_pos)
+add_subdirectory(02-panda_force_control)
+add_subdirectory(03-two_arm_panda)
